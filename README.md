@@ -1,2 +1,2 @@
 # mart_tani
-mart-tani
+server_mart-tani
