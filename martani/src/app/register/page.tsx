@@ -42,9 +42,9 @@ export default function Register() {
             };
             alert("Success Register! Please login to continue.");
             router.push('/login')
-        } catch (error) {
+        } catch (error: any) {
             console.log(error);
-            alert(error)
+            alert(error.message || 'Something went wrong')
         } finally {
             setLoading(false)
         }
@@ -59,6 +59,7 @@ export default function Register() {
             <br />
             <input
               type="text"
+              name="username"
               placeholder="Username"
               value={formData.username}
               onChange={handleInputChange}
@@ -69,6 +70,7 @@ export default function Register() {
             <br />
             <input
               type="text"
+              name="email"
               placeholder="Email"
               value={formData.email}
               onChange={handleInputChange}
@@ -79,6 +81,7 @@ export default function Register() {
             <br />
             <input
               type="text"
+              name="password"
               placeholder="Password"
               value={formData.password}
               onChange={handleInputChange}

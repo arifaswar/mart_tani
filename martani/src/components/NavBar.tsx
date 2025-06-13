@@ -1,5 +1,7 @@
+// 'use server'
+import { handleLogout } from "@/helpers/actions";
 import Link from "next/link";
-export default function NavBar() {
+export default async function NavBar() {
   return (
     <nav className="flex justify-between p-2 bg-slate-300 px-4">
         <div className="border border-b-emerald-900">
@@ -13,7 +15,9 @@ export default function NavBar() {
             <Link href={'/info'}>Informasi</Link>
             <Link href={'/discussion'}>Diskusi</Link>
         </ul>
-        <button>Logout</button>
+        <button type="submit" onClick={handleLogout} className="bg-red-600 text-amber-50 border rounded h-6">
+            Logout
+          </button>
     </nav>
   );
 }

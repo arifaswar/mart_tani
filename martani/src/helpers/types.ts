@@ -3,3 +3,11 @@ export type UserType = {
     email:string,
     password:string
 }
+export type ProductType = {
+    name: string,
+    description?: string,
+    price:number,
+    images?: string,
+    createdAt?: Date,
+    updatedAt?: Date
+}
