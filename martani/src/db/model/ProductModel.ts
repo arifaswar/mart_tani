@@ -1,6 +1,5 @@
 import { ProductType } from "@/helpers/types";
 import { database } from "../config/mongodb";
-import { addAbortListener } from "events";
 import { ObjectId } from "mongodb";
 
 class ProductModel {

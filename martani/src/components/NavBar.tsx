@@ -1,7 +1,7 @@
 // 'use server'
 import { handleLogout } from "@/helpers/actions";
 import Link from "next/link";
-export default async function NavBar() {
+export default function NavBar() {
   return (
     <nav className="flex justify-between p-2 bg-slate-300 px-4">
         <div className="border border-b-emerald-900">

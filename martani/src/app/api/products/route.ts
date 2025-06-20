@@ -18,11 +18,19 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET(){
-    try {
-        
-    } catch (error) {
-        console.log(error);
-        
-    }
+export async function GET() {
+  try {
+    const products = await ProductModel.findAll();
+    return new Response(JSON.stringify(products), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    return new Response("Failed to fetch products", {
+      status: 500,
+    });
+  }
 }
