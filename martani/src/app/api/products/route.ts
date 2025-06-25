@@ -1,20 +1,16 @@
 import ProductModel from "@/db/model/ProductModel";
 import { z } from "zod";
 
-const productSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  price: z.number().min(0, "Price must be a positive number"),
-  description: z.string().optional(),
-  images:z.string()
-});
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const validateData = productSchema.parse(body);
+    const validateData = (body);
 
     const newProduct = await ProductModel.create(validateData)
-  } catch (error) {
+    return Response.json(newProduct, {status: 201})
+  } catch (error:any) {
     console.log(error);
+    return Response.json({message: error.message}, {status: 400})
   }
 }
 

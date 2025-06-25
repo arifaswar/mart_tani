@@ -15,7 +15,7 @@ export default function NavBar() {
             <Link href={'/info'}>Informasi</Link>
             <Link href={'/discussion'}>Diskusi</Link>
         </ul>
-        <button type="submit" onClick={handleLogout} className="bg-red-600 text-amber-50 border rounded h-6">
+        <button type="submit" onClick={handleLogout} className="bg-red-600 text-amber-50 border p-1 h-8 rounded">
             Logout
           </button>
     </nav>

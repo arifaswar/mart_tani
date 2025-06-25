@@ -20,6 +20,22 @@ class ProductModel {
 
     static async findById(id: string) {
         return await this.collection().findOne({_id: new ObjectId(id)})
+    };
+
+    static async deleteById(id:string){
+        return await this.collection().deleteOne({_id:new ObjectId(id)})
+    };
+
+    static async updateById(id:string, updateData:Partial<ProductType>){
+        return await this.collection().updateOne(
+            {_id: new ObjectId(id)},
+            {
+                $set: {
+                    ...updateData,
+                    updatedAt: new Date()
+                }
+            }
+        )
     }
 }
 

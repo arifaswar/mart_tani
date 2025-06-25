@@ -12,6 +12,8 @@ export default function Login() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+  console.log("Password dikirim:", formData.password);
+
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     // const rawFormData = {
     //   email: formData.get('email'),

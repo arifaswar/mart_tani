@@ -10,12 +10,12 @@ export async function POST(request: Request) {
       return Response.json({ error: "Invalid input" }, { status: 400 });
     }
 
-    const hashedPassword = hashPassword(password);
+    const hashedPassword = await hashPassword(password);
 
     const newUser = await UserModel.create({
         username,
         email,
-        password:hashedPassword
+        password: hashedPassword
     });
 
     return new Response(JSON.stringify({ message: "success register" }), {

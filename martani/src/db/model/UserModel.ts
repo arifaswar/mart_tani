@@ -37,7 +37,7 @@ class UserModel {
             }
         };
 
-        newUser.password = hashPassword(newUser.password);
+        newUser.password = await hashPassword(newUser.password);
 
         await this.collection().insertOne(newUser);
         return 'Success to Register'
